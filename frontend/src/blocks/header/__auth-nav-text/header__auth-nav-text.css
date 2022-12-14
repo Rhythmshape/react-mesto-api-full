@@ -1,0 +1,24 @@
+.header__auth-nav-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    padding-right: 24px;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 767px) {
+    .header__auth-nav-text {
+        padding-right: 10px;
+        font-size: 14px;
+        max-width: 105px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header__auth-nav-text {
+        max-width: 105px;
+    }
+}

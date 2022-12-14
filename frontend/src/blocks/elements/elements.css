@@ -1,0 +1,22 @@
+.elements {
+  padding: 51px 0 0;
+  width: calc(100% - 400px);
+  margin: 0 auto;
+  justify-items: center;
+  max-width: 880px;
+  box-sizing: border-box;
+  }
+
+@media screen and (max-width: 1023px) {
+  .elements {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .elements {
+    width: calc(100% - 38px);
+    padding: 36px 0 0;
+  }
+}
+

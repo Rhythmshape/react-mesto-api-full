@@ -1,0 +1,14 @@
+.login__text {
+    margin: 15px 0 0;
+    font-size: 17px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 767px) {
+    .login__text {
+        font-size: 14px;
+        margin: 20px 0 0;
+    }
+}

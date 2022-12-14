@@ -1,0 +1,21 @@
+.edit-form__item {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  max-width: 358px;
+  width: 100%;
+  opacity: 1;
+  font-family: inherit;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 0 13px 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+@media screen and (max-width: 767px) {
+  .edit-form__item {
+    max-width: 238px;
+  }
+}

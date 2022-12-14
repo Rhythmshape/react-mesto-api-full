@@ -1,0 +1,17 @@
+.element__like-button {
+  background-image: url(../../../images/serdce_.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  align-self: center;
+  cursor: pointer;
+  width: 22px;
+  height: 19px;
+  border: none;
+  opacity: 1;
+  transition: opacity .5s;
+}
+
+.element__like-button:hover {
+  opacity: .6;
+}

@@ -1,0 +1,14 @@
+.edit-form__input-error {
+    min-height: 30px;
+    margin: 5px 0 0;
+  }
+
+  .edit-form__input-error:last-of-type {
+    min-height: 48px;
+  }
+
+  @media screen and (max-width: 425px) {
+    .edit-form__input-error:last-of-type{
+      min-height: 45px;
+    }
+  }
