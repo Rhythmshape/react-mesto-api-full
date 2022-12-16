@@ -1,5 +1,7 @@
 const allowedCors = [
   'http://localhost:3000',
+  'http://mesto.khalina.nomoredomains.club',
+  'https://mesto.khalina.nomoredomains.club',
 ];
 
 const cors = (req, res, next) => {
