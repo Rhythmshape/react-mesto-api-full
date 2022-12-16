@@ -97,7 +97,7 @@ class Api {
 }
 
 const api = new Api({
-  serverUrl: 'http://localhost:3001',
+  serverUrl: 'https://api.mesto.khalina.nomoredomains.club',
   headers: {
     'Content-Type': 'application/json'
   }
