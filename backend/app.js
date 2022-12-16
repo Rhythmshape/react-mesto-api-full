@@ -6,6 +6,8 @@ const { errors } = require('celebrate');
 const cors = require('./middlewares/cors');
 const routes = require('./routes');
 
+mongoose.set('strictQuery', true);
+
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const handleError = require('./middlewares/handleError');
 
