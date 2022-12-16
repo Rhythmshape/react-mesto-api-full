@@ -9,3 +9,6 @@
 - Авторизация и регистрация пользователей.
 
 ### Ссылки:
+- IP   #### 158.160.53.181
+- Frontend #### https://mesto.khalina.nomoredomains.club
+- Backend #### https://api.mesto.khalina.nomoredomains.club
