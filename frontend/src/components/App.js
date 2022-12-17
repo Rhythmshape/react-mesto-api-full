@@ -85,13 +85,13 @@ function App() {
         .then(([user, cards]) => {
           setCurrentUser(user.user);
           setCards(cards);
-          navigate('/')
+          
         })
         .catch((err) => {
           console.log(err);
         });
     }
-  }, [isLoggedIn, navigate]);
+  }, [isLoggedIn]);
 
   function handleUpdateUser(data) {
     api.editPageUserInfo(data)
