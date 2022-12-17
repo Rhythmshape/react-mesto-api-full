@@ -90,9 +90,7 @@ function App() {
         .catch((err) => {
           console.log(err);
         });
-        
-    return    
-      
+           
     }
   }, [isLoggedIn]);
 
@@ -249,7 +247,7 @@ function App() {
             exact path="/"
             element={
               <>
-                <Header title="Выйти" email={emailName} onClick={onSignOut} route="" />
+                <Header title="Выйти" email={emailName} onClick={onSignOut} route="/signin" />
                 <ProtectedRoute
                   component={Main}
                   isLogged={isLoggedIn}
