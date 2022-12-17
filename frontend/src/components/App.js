@@ -85,12 +85,13 @@ function App() {
         .then(([user, cards]) => {
           setCurrentUser(user.user);
           setCards(cards);
+          navigate('/')
         })
         .catch((err) => {
           console.log(err);
         });
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
 
   function handleUpdateUser(data) {
     api.editPageUserInfo(data)
@@ -227,6 +228,7 @@ function App() {
               <>
                 <Header title="Регистрация" route="/signup" />
                 <Login onLogin={onLogin} />
+                <Navigate to={isLoggedIn ? "/" : "/signin"}/>
               </>
             }
           />
@@ -236,6 +238,7 @@ function App() {
               <>
                 <Header title="Войти" route="/signin" />
                 <Register onRegister={onRegister} />
+                <Navigate to={isLoggedIn ? "/" : "/signup"}/>
               </>
             }
           />
