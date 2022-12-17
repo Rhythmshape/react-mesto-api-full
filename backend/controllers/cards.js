@@ -4,7 +4,7 @@ const NotFoundError = require('../errors/NotFoundError');
 const ForbiddenError = require('../errors/ForbiddenError');
 
 module.exports.getCards = (req, res, next) => {
-  Card.find({})
+  Card.find({}).sort({ createdAt: -1 })
     .then((cards) => res.status(200).send(cards))
     .catch(next);
 };
@@ -14,13 +14,7 @@ module.exports.createCard = (req, res, next) => {
   const owner = req.user._id;
 
   return Card.create({ name, link, owner })
-    .then((card) => res.status(200).send({
-      _id: card._id,
-      name: card.name,
-      link: card.link,
-      owner: card.owner,
-      likes: [],
-    }))
+    .then(res.send)
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Переданы некорректные данные'));
@@ -41,7 +35,8 @@ module.exports.deleteCard = (req, res, next) => {
     .then((card) => {
       if (card.owner.toString() === userId.toString()) {
         Card.findByIdAndRemove(cardId)
-          .then(() => res.status(200).send({ message: 'Карточка удалена' }));
+          .then(() => res.status(200).send({ message: 'Карточка удалена' }))
+          .catch(next);
       } else {
         throw new ForbiddenError('Доступ не предоставлен');
       }

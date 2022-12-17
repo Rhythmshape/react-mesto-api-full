@@ -5,7 +5,6 @@ const User = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
-const AuthError = require('../errors/AuthError');
 
 module.exports.getUsers = (req, res, next) => {
   User.find({})
@@ -31,22 +30,9 @@ module.exports.getUserById = (req, res, next) => {
 };
 
 module.exports.createUser = (req, res, next) => {
-  const {
-    name,
-    about,
-    avatar,
-    email,
-  } = req.body;
   bcrypt.hash(req.body.password, 10)
     .then((hash) => {
-      req.body.password = hash;
-      return User.create({
-        name,
-        about,
-        avatar,
-        email,
-        password: hash,
-      });
+      User.create({ ...req.body, password: hash });
     })
     .then((user) => {
       res.status(201).send({
@@ -120,13 +106,7 @@ module.exports.login = (req, res, next) => {
       );
       res.send({ token, message: 'Успешная Авторизация!' });
     })
-    .catch((err) => {
-      if (err.name === 'AuthError') {
-        next(new AuthError('Неправильные почта или пароль.'));
-      } else {
-        next(err);
-      }
-    });
+    .catch(next);
 };
 
 module.exports.getCurrentUser = (req, res, next) => {
