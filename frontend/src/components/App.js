@@ -226,9 +226,9 @@ function App() {
             path="/signin"
             element={
               <>
+                <Navigate to={isLoggedIn ? "/" : "/signin"}/>
                 <Header title="Регистрация" route="/signup" />
                 <Login onLogin={onLogin} />
-                <Navigate to={isLoggedIn ? "/" : "/signin"}/>
               </>
             }
           />
@@ -236,9 +236,9 @@ function App() {
             path="signup"
             element={
               <>
-                <Header title="Войти" route="/signin" />
-                <Register onRegister={onRegister} />
                 <Navigate to={isLoggedIn ? "/" : "/signup"}/>
+                <Header title="Войти" route="/signin" />
+                <Register onRegister={onRegister} />          
               </>
             }
           />
